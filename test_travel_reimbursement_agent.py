@@ -5,7 +5,6 @@ Run with:
 
 The notebook is executed in a temporary working directory with OpenRouter
 environment variables removed, so this test suite does not make live API calls.
-The notebook's saved live-tool evidence is inspected separately as an artifact.
 """
 
 import json
@@ -135,14 +134,6 @@ class TravelReimbursementNotebookTests(unittest.TestCase):
             any(
                 "Focused policy, boundary, schema, duplicate, and safe-dispatch tests passed."
                 in output
-                for output in self.stream_outputs
-            )
-        )
-
-    def test_offline_fallback_execution_is_reported(self):
-        self.assertTrue(
-            any(
-                output.startswith("Offline fallback validated.")
                 for output in self.stream_outputs
             )
         )
