@@ -3,8 +3,6 @@
 Run with:
     python -m unittest test_travel_reimbursement_agent.py -v
 
-The notebook is executed in a temporary working directory with OpenRouter
-environment variables removed, so this test suite does not make live API calls.
 """
 
 import json
